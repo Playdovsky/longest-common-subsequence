@@ -51,4 +51,21 @@ class Diff:
             j = 0
             i += 1
         
-        print(f"\nLongest Common Subsequence = {matrix[len(n)][len(m)]}\n\n")
+        print(f"\nLongest Common Subsequence\n| length = {matrix[len(n)][len(m)]}\n| string = {self.find_lcs_string(matrix, n, m)}\n")
+    
+    def find_lcs_string(self, matrix, n, m):
+        i = len(n)
+        j = len(m)
+        lcs_string = ""
+        
+        while i > 0 and j > 0:
+            if n[i - 1] == m[j - 1]:
+                lcs_string = n[i - 1] + lcs_string
+                i -= 1
+                j -= 1
+            elif matrix[i - 1][j] > matrix[i][j - 1]:
+                i -= 1
+            else:
+                j -= 1
+                
+        return lcs_string
