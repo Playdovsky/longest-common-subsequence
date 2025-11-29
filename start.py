@@ -1,3 +1,5 @@
+from diff import Diff
+
 class Start:
     def __init__(self):
         self.menu()
@@ -6,12 +8,14 @@ class Start:
         try:
             while True:
                 print("Please select option")
-                print("1. Pass\n2. Exit")
+                print("1. Longest Commong Subsequence\n2. Exit")
                 option = int(input())
                 
                 match option:
                     case 1:
-                        pass
+                        n = input("Enter first string: ")
+                        m = input("Enter second string: ")
+                        diff = Diff(n, m)
                     case 2:
                         exit()
                     case _:
