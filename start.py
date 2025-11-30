@@ -8,10 +8,11 @@ class Start:
     def menu(self):
         try:
             while True:
-                print("Please select option")
-                print("1. Longest Commong Subsequence\n2. Compare files\n3. Exit")
+                print("\nPlease select option")
+                print("1. Longest Commong Subsequence\n2. Compare files\n3. Exit\n")
                 option = int(input())
-                
+                print()
+
                 match option:
                     case 1:
                         n = input("Enter first string: ")
@@ -27,13 +28,13 @@ class Start:
                         print("Please select valid option from the list\n")
                         self.menu()
         except ValueError:
-            print("Please select valid option from the list")
+            print("Please select valid option from the list\n")
             self.menu()
         except FileNotFoundError:
-            print("File could not be found. Please check paths and try again")
+            print("File could not be found. Please check paths and try again\n")
             self.menu()
         except Exception as e:
-            print(f"An error occured: {e}")
+            print(f"An error occured: {e}\n")
             self.menu()
 
 self_start = Start()

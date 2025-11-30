@@ -36,6 +36,7 @@ class Lcs:
         i = 0
         j = 0
         
+        print()
         print("    " + " ".join(m))
 
         while i < len(n) + 1:
